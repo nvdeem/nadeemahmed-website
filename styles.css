@@ -163,15 +163,9 @@ body::after {
 .content {
     width: 100%;
     max-width: 480px;
-    margin-left: clamp(2rem, 18vw, 22rem);
+    margin: 0 auto;
 }
 
-@media (min-width: 1400px) {
-    .content {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
 
 /* ===== Profile Photo ===== */
 .profile-photo-wrapper {
@@ -352,12 +346,6 @@ body::after {
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-    .content {
-        margin-left: 0;
-        margin: 0 auto;
-        text-align: left;
-    }
-    
     .container {
         padding: 1.5rem;
     }
