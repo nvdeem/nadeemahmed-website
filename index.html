@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadeem Ahmed — Quality Engineer & Designer</title>
+    <meta name="description" content="I sit where design and engineering intersect, turning complex problems into seamless, reliable experiences.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-glow"></div>
+    <div class="bg"></div>
+    <main class="container">
+        <div class="content">
+            <!-- Profile Photo -->
+            <div class="profile-photo-wrapper">
+                <img src="profile.jpeg" alt="Nadeem Ahmed" class="profile-photo" onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+            </div>
+            
+            <!-- Headline -->
+            <h1 class="headline">Hey, I'm Nadeem</h1>
+            
+            <!-- Subtitle -->
+            <p class="subtitle">QUALITY ENGINEER <span class="separator">×</span> DESIGNER</p>
+            
+            <!-- Tagline -->
+            <p class="tagline">I sit where design and engineering intersect, turning complex problems into seamless, reliable experiences.</p>
+            
+            <!-- CTA -->
+            <a href="https://www.behance.net/nadeemahmed" target="_blank" rel="noopener" class="cta">View my work <span class="arrow">↗</span></a>
+            
+            <!-- Contact -->
+            <p class="contact">
+                Find me on <a href="https://linkedin.com/in/nadeem-a" target="_blank" rel="noopener">LinkedIn</a> or say <a href="mailto:hello@nadeemahmed.co.uk">hello@nadeemahmed.co.uk</a>
+            </p>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Custom cursor follows mouse
+            const cursor = document.querySelector('.cursor');
+            const cursorGlow = document.querySelector('.cursor-glow');
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+            let glowX = 0, glowY = 0;
+            
+            let cursorVisible = false;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                if (!cursorVisible) {
+                    cursor.style.opacity = '1';
+                    cursorGlow.style.opacity = '1';
+                    cursorVisible = true;
+                }
+            });
+            
+            document.addEventListener('mouseleave', () => {
+                cursor.style.opacity = '0';
+                cursorGlow.style.opacity = '0';
+                cursorVisible = false;
+            });
+            
+            function animateCursor() {
+                // Smooth cursor with slight lag
+                cursorX += (mouseX - cursorX) * 0.15;
+                cursorY += (mouseY - cursorY) * 0.15;
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+                
+                // Slower glow
+                glowX += (mouseX - glowX) * 0.08;
+                glowY += (mouseY - glowY) * 0.08;
+                cursorGlow.style.left = glowX + 'px';
+                cursorGlow.style.top = glowY + 'px';
+                
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+        });
+    </script>
+</body>
+</html>
+
