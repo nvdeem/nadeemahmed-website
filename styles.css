@@ -218,6 +218,14 @@ body::after {
 }
 
 /* Links */
+.cta-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.25rem;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
 .cta {
     display: inline-flex;
     align-items: center;
@@ -225,7 +233,6 @@ body::after {
     font-size: 0.9rem;
     color: var(--text-dim);
     text-decoration: none;
-    margin-bottom: 2.25rem;
     position: relative;
     transition: color 0.3s var(--ease);
     animation: fadeInUp 0.8s ease-out 0.5s both;
